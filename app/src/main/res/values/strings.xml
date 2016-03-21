@@ -1,0 +1,30 @@
+<resources>
+
+    <string name="app_name" translatable="false">YalantisTask#1</string>
+    <string name="request_code" translatable="false">CE-1257218</string>
+    <string name="economy_branch">Municipal economy</string>
+    <string name="status">In work</string>
+    <string name="created_text">Created</string>
+    <string name="created_date">25 February 2016</string>
+    <string name="registered_text">Registered</string>
+    <string name="registered_date">26 February 2016</string>
+    <string name="solve_until_text">Solve until</string>
+    <string name="solve_date">29 February 2016</string>
+    <string name="responsible_text">Responsible</string>
+    <string name="responsible_name">Dnipropetrovsk MVK</string>
+    <string name="description">Opened hatch (near the billboard), the area of 18 and 19 trams turn to Mira avenue from the Donetsk highway</string>
+
+    <string-array name="images">
+        <item>image_01.jpg</item>
+        <item>image_02.jpg</item>
+        <item>image_03.jpg</item>
+        <item>image_04.jpg</item>
+        <item>image_05.jpg</item>
+        <item>image_06.jpg</item>
+        <item>image_07.jpg</item>
+        <item>image_08.jpg</item>
+        <item>image_09.jpg</item>
+        <item>image_10.jpg</item>
+    </string-array>
+
+</resources>

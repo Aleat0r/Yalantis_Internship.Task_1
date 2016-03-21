@@ -1,0 +1,50 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:divider">@color/colorDivider</item>
+        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
+        <item name="android:textColorSecondary">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="LinearLayout">
+        <item name="android:onClick">onClick</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="BasicTextView">
+        <item name="android:onClick">onClick</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="Branch" parent="BasicTextView">
+        <item name="android:textSize">@dimen/branch_text_size</item>
+    </style>
+
+    <style name="LeftTextView" parent="BasicTextView">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="RightTextView" parent="BasicTextView">
+        <item name="android:gravity">end</item>
+    </style>
+
+    <style name="Status" parent="RightTextView">
+        <item name="android:paddingLeft">@dimen/status_horizontal_padding</item>
+        <item name="android:paddingRight">@dimen/status_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/status_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/status_vertical_padding</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/status_background</item>
+        <item name="android:layout_weight">0</item>
+    </style>
+
+</resources>

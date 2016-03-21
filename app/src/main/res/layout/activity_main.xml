@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        style="@style/LinearLayout"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/LinearLayout">
+
+            <TextView
+                style="@style/Branch"
+                android:text="@string/economy_branch" />
+
+            <TextView
+                style="@style/Status"
+                android:text="@string/status" />
+
+        </LinearLayout>
+
+        <include layout="@layout/divider" />
+
+        <LinearLayout style="@style/LinearLayout">
+
+            <TextView
+                style="@style/LeftTextView"
+                android:text="@string/created_text" />
+
+            <TextView
+                style="@style/RightTextView"
+                android:text="@string/created_date" />
+
+        </LinearLayout>
+
+        <include layout="@layout/divider" />
+
+        <LinearLayout style="@style/LinearLayout">
+
+            <TextView
+                style="@style/LeftTextView"
+                android:text="@string/registered_text" />
+
+            <TextView
+                style="@style/RightTextView"
+                android:text="@string/registered_date" />
+
+        </LinearLayout>
+
+        <include layout="@layout/divider" />
+
+        <LinearLayout style="@style/LinearLayout">
+
+            <TextView
+                style="@style/LeftTextView"
+                android:text="@string/solve_until_text" />
+
+            <TextView
+                style="@style/RightTextView"
+                android:text="@string/solve_date" />
+
+        </LinearLayout>
+
+        <include layout="@layout/divider" />
+
+        <LinearLayout style="@style/LinearLayout">
+
+            <TextView
+                style="@style/LeftTextView"
+                android:text="@string/responsible_text" />
+
+            <TextView
+                style="@style/RightTextView"
+                android:text="@string/responsible_name" />
+
+        </LinearLayout>
+
+        <include layout="@layout/divider" />
+
+        <TextView
+            style="@style/BasicTextView"
+            android:text="@string/description" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_images"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/recycler_view_height"
+            android:layout_marginTop="@dimen/recycler_view_margin" />
+
+    </LinearLayout>
+
+</ScrollView>

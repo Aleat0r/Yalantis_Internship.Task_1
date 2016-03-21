@@ -1,0 +1,19 @@
+<resources>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="divider_margin">12dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+
+    <dimen name="text_size">15sp</dimen>
+    <dimen name="branch_text_size">17sp</dimen>
+
+    <dimen name="status_radius">20dp</dimen>
+    <dimen name="status_vertical_padding">4dp</dimen>
+    <dimen name="status_horizontal_padding">8dp</dimen>
+
+    <dimen name="recycler_view_height">160dp</dimen>
+    <dimen name="recycler_view_margin">12dp</dimen>
+
+</resources>

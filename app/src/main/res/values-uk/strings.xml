@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="economy_branch">Комунальне господарство</string>
+    <string name="status">В роботі</string>
+    <string name="created_text">Сторено</string>
+    <string name="created_date">25 лютого 2016</string>
+    <string name="registered_text">Зареєстровано</string>
+    <string name="registered_date">26 лютого 2016</string>
+    <string name="solve_until_text">Вирішити до</string>
+    <string name="solve_date">29 лютого 2016</string>
+    <string name="responsible_text">Відповідальний</string>
+    <string name="responsible_name">Дніпропетровський МВК</string>
+    <string name="description">Відкритий люк (біля рекламного щита), район повороту 18 та 19 трамваїв на проспект Миру з Донецького шосе</string>
+</resources>
