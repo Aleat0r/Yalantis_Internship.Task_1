@@ -18,11 +18,17 @@
         <LinearLayout style="@style/LinearLayout">
 
             <TextView
-                style="@style/Branch"
+                style="@style/BasicTextView.Branch"
+                android:layout_gravity="center_vertical"
                 android:text="@string/economy_branch" />
 
             <TextView
-                style="@style/Status"
+                style="@style/BasicTextView.Status"
+                android:layout_gravity="center_vertical"
+                android:paddingBottom="@dimen/status_vertical_padding"
+                android:paddingLeft="@dimen/status_horizontal_padding"
+                android:paddingRight="@dimen/status_horizontal_padding"
+                android:paddingTop="@dimen/status_vertical_padding"
                 android:text="@string/status" />
 
         </LinearLayout>
@@ -32,11 +38,12 @@
         <LinearLayout style="@style/LinearLayout">
 
             <TextView
-                style="@style/LeftTextView"
+                style="@style/BasicTextView.LeftTextView"
                 android:text="@string/created_text" />
 
             <TextView
-                style="@style/RightTextView"
+                style="@style/BasicTextView"
+                android:gravity="end"
                 android:text="@string/created_date" />
 
         </LinearLayout>
@@ -46,11 +53,12 @@
         <LinearLayout style="@style/LinearLayout">
 
             <TextView
-                style="@style/LeftTextView"
+                style="@style/BasicTextView.LeftTextView"
                 android:text="@string/registered_text" />
 
             <TextView
-                style="@style/RightTextView"
+                style="@style/BasicTextView"
+                android:gravity="end"
                 android:text="@string/registered_date" />
 
         </LinearLayout>
@@ -60,11 +68,12 @@
         <LinearLayout style="@style/LinearLayout">
 
             <TextView
-                style="@style/LeftTextView"
+                style="@style/BasicTextView.LeftTextView"
                 android:text="@string/solve_until_text" />
 
             <TextView
-                style="@style/RightTextView"
+                style="@style/BasicTextView"
+                android:gravity="end"
                 android:text="@string/solve_date" />
 
         </LinearLayout>
@@ -74,11 +83,12 @@
         <LinearLayout style="@style/LinearLayout">
 
             <TextView
-                style="@style/LeftTextView"
+                style="@style/BasicTextView.LeftTextView"
                 android:text="@string/responsible_text" />
 
             <TextView
-                style="@style/RightTextView"
+                style="@style/BasicTextView"
+                android:gravity="end"
                 android:text="@string/responsible_name" />
 
         </LinearLayout>

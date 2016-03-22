@@ -20,8 +20,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initToolbar() {
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(getString(R.string.request_code));
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(getString(R.string.request_code));
+        }
     }
 
     private void initRecyclerView() {
@@ -39,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         String text = view.getClass().getSimpleName();
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
