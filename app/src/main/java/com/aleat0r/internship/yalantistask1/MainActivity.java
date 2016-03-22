@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initToolbar() {
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //[Comment] It can be null.
         getSupportActionBar().setTitle(getString(R.string.request_code));
     }
 
