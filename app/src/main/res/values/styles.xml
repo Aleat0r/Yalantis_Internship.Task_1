@@ -33,7 +33,7 @@
         <item name="android:textColor">@color/colorTextSecondary</item>
     </style>
 
-    <style name="RightTextView" parent="BasicTextView">
+    <style name="RightTextView" parent="BasicTextView"> <!-- [Comment] Also you can make inheritance with "." RightTextView.BasicTextView -->
         <item name="android:gravity">end</item>
     </style>
 
@@ -46,5 +46,7 @@
         <item name="android:background">@drawable/status_background</item>
         <item name="android:layout_weight">0</item>
     </style>
+
+    <!-- [Comment] Don't use relativity attributes in styles -->
 
 </resources>
