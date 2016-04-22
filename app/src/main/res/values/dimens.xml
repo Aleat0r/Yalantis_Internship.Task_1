@@ -4,7 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="divider_margin">12dp</dimen>
-    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_size">1dp</dimen>
 
     <dimen name="text_size">14sp</dimen>
     <dimen name="branch_text_size">17sp</dimen>
@@ -15,5 +15,27 @@
 
     <dimen name="recycler_view_height">160dp</dimen>
     <dimen name="recycler_view_margin">12dp</dimen>
+
+    <dimen name="drawer_header_height">100dp</dimen>
+    <dimen name="drawer_width">304dp</dimen>
+    <dimen name="drawer_title_text_size">24sp</dimen>
+    <dimen name="drawer_title_left_padding">16dp</dimen>
+    <dimen name="authors_margin">16dp</dimen>
+
+
+    <dimen name="fab_size">56dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="list_recycler_view_padding">8dp</dimen>
+    <dimen name="list_view_divider_height">16dp</dimen>
+
+    <dimen name="card_height">130dp</dimen>
+    <dimen name="card_content_margin">16dp</dimen>
+    <dimen name="card_icon_width">80dp</dimen>
+    <dimen name="card_icon_height">40dp</dimen>
+    <dimen name="card_address_vertical_margin">6dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="like_image_padding">8dp</dimen>
+    <dimen name="like_text_size">16sp</dimen>
 
 </resources>

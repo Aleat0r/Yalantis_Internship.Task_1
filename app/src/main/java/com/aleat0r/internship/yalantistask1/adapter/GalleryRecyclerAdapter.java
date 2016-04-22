@@ -1,4 +1,4 @@
-package com.aleat0r.internship.yalantistask1;
+package com.aleat0r.internship.yalantistask1.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,25 +8,26 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.aleat0r.internship.yalantistask1.R;
 import com.squareup.picasso.Picasso;
 
 /**
  * Created by Aleksandr Kovalenko on 21.03.2016.
  */
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ImageViewHolder> {
+public class GalleryRecyclerAdapter extends RecyclerView.Adapter<GalleryRecyclerAdapter.ImageViewHolder> {
 
     private Context mContext;
     private String[] mImages;
     private static final String IMAGES_ASSETS_URL = "file:///android_asset/animals/";
 
-    public RecyclerViewAdapter(Context context, String[] images) {
+    public GalleryRecyclerAdapter(Context context, String[] images) {
         mContext = context;
         mImages = images;
     }
 
     @Override
     public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.recycler_view_item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.gallery_recycler_item, parent, false);
         return new ImageViewHolder(view);
     }
 

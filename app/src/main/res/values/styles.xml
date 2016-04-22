@@ -9,6 +9,11 @@
         <item name="android:textColorSecondary">@color/colorTextSecondary</item>
     </style>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <style name="LinearLayout">
         <item name="android:onClick">onClick</item>
         <item name="android:layout_width">match_parent</item>
@@ -36,6 +41,61 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:background">@drawable/status_background</item>
         <item name="android:layout_weight">0</item>
+    </style>
+
+    <style name="DrawerTitleTextView">
+        <item name="android:alpha">0.69</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/drawer_title_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:paddingLeft">@dimen/drawer_title_left_padding</item>
+        <item name="android:fontFamily">Roboto-Bold</item>
+    </style>
+
+    <style name="TabLayout" parent="Base.Widget.Design.TabLayout">
+        <item name="tabGravity">fill</item>
+        <item name="tabIndicatorColor">@android:color/white</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabSelectedTextColor">@color/colorTabTextPrimary</item>
+        <item name="tabTextColor">@color/colorTabTextSecondary</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+    </style>
+
+    <style name="List_RecyclerView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">@dimen/list_recycler_view_padding</item>
+    </style>
+
+    <style name="LikeTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawableLeft">@drawable/ic_like</item>
+        <item name="android:drawablePadding">@dimen/like_image_padding</item>
+        <item name="android:drawableStart">@drawable/ic_like</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/colorLike</item>
+        <item name="android:textSize">@dimen/like_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CardTextViewBasic">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="CardTitleTextView" parent="CardTextViewBasic">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textAppearance">?attr/textAppearanceListItem</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="CardDateTextView" parent="CardTextViewBasic">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
 
 </resources>

@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name" translatable="false">YalantisTask#1</string>
+    <string name="app_name" translatable="false">Yalantis Intership Task</string>
     <string name="request_code" translatable="false">CE-1257218</string>
     <string name="economy_branch">Municipal economy</string>
     <string name="status">In work</string>
@@ -26,5 +26,29 @@
         <item>image_09.jpg</item>
         <item>image_10.jpg</item>
     </string-array>
+
+    <string name="drawer_title_text" translatable="false">e-contact</string>
+    <string name="all_appeals" translatable="false">Всі звернення</string>
+    <string name="appeals_on_map" translatable="false">Звернення на мапі</string>
+    <string name="login_into_account" translatable="false">Увійти в аккаунт</string>
+    <string name="authors" translatable="false">Зроблено з любов\'ю\n<a href="#">IT Ruh Dnipro</a> та <a href="#">Yalantis</a></string>
+
+    <string name="first_tab" translatable="false">В РОБОТІ</string>
+    <string name="second_tab" translatable="false">ВИКОНАНО</string>
+    <string name="third_tab" translatable="false">ОЧІКУЄ</string>
+    <string name="filter" translatable="false">Filter</string>
+    <string name="category_1" translatable="false">Комунальне господарство</string>
+    <string name="category_2" translatable="false">Прибирання сміття</string>
+    <string name="responsibile_1" translatable="false">Днiпропетровський МВК</string>
+    <string name="responsibile_2" translatable="false">Запорізький МВК</string>
+    <string name="days" translatable="false"> днів</string>
+
+    <string name="key_for_issue" translatable="false">IssueKey</string>
+
+    <string name="status_in_work" translatable="false">В роботі</string>
+    <string name="status_done" translatable="false">Виконано</string>
+    <string name="status_wait" translatable="false">Очікує</string>
+    <string name="full_description" translatable="false">Повний опис проблеми №</string>
+    <string name="date_format" translatable="false">MMM d, yyyy</string>
 
 </resources>

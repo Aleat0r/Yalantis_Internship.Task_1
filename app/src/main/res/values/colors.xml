@@ -7,4 +7,12 @@
     <color name="colorTextSecondary">#A9A9A9</color>
     <color name="colorBackground">#eaeaea</color>
     <color name="colorDivider">#d6d6d7</color>
+    <color name="colorFAB">#ff9c26</color>
+    <color name="colorGradientStart">#4a76a4</color>
+    <color name="colorGradientCenter">#45b3c3</color>
+    <color name="colorGradientEnd">#6082b4</color>
+    <color name="colorTabTextPrimary">@android:color/white</color>
+    <color name="colorTabTextSecondary">#CCD7E6</color>
+    <color name="colorLike">#CCCCCC</color>
+
 </resources>
