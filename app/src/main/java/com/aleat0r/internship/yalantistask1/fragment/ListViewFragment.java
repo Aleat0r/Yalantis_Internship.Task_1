@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class ListViewFragment extends Fragment {
 
-    private ListView mListView;
+    private ListView mListView; //[Comment] Can be local
     private ListViewAdapter mAdapter;
 
     private Invoker mInvoker;
@@ -56,7 +56,8 @@ public class ListViewFragment extends Fragment {
         mListView.setAdapter(mAdapter);
         mListView.setOnItemClickListener(mInvoker);
 
-        FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab); //[Comment] Very BAD.
+        // Fab - is view inside Activity. Make connection between activity and fragment with callbacks
         fab.attachToListView(mListView);
         return v;
     }

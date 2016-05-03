@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class ListViewAdapter extends BaseAdapter {
 
-    private List<Issue> mModel;
+    private List<Issue> mModel; //[Comment] Issue - is a model, List<Issue> - is a mModelsList;
     private Context mContext;
 
     public ListViewAdapter(Context context, List<Issue> model) {
@@ -28,7 +28,7 @@ public class ListViewAdapter extends BaseAdapter {
         this.mModel = new ArrayList<>();
         if (model != null) {
             this.mModel.addAll(model);
-        }
+        } //[Comment] Why? Just do: mModelsList = modelsList;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class ListViewAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View v = convertView;
+        View v = convertView; //[Comment] Why you create new view? Use convertview!
         IssueViewHolder holder;
 
         if (v == null) {
@@ -70,14 +70,14 @@ public class ListViewAdapter extends BaseAdapter {
         String days = mContext.getResources().getString(R.string.days);
         holder.daysLeft.setText(String.valueOf(issue.getDaysAmount()).concat(" ").concat(days));
 
-        v.setTag(holder);
+        v.setTag(holder); //[Comment] It should be inside if
         return v;
     }
 
     private class IssueViewHolder {
 
         private TextView categoryTitle;
-        private TextView adrress;
+        private TextView adrress; //[Comment] Something wrong witg this object.
         private TextView daysLeft;
         private TextView dateCreated;
         private TextView likesCount;

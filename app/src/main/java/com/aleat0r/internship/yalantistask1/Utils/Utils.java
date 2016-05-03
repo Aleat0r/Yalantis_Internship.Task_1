@@ -58,7 +58,7 @@ public class Utils {
 
             Date dtReg = new Date();
             dtReg.setDate(random.nextInt(31) + 1);
-            dtReg.setMonth(2);
+            dtReg.setMonth(2); //[Comment] Looks like deprecated method
 
             result.add(new Issue(i, number, category, state, dtCreated, dtReg, new Date(),
                     responsible, iconId, random.nextInt(MAX_LIKE_RANDOM), context.getString(R.string.full_description) + number));

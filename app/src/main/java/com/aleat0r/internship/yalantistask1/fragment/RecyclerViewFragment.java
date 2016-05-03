@@ -58,7 +58,7 @@ public class RecyclerViewFragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
 
         FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
-        fab.attachToRecyclerView(mRecyclerView);
+        fab.attachToRecyclerView(mRecyclerView); //[Comment] @see ListViewFragment
 
         return v;
     }
