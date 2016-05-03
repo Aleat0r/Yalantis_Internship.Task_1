@@ -1,5 +1,6 @@
 package com.aleat0r.internship.yalantistask1.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,11 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.aleat0r.internship.yalantistask1.R;
+import com.aleat0r.internship.yalantistask1.activity.MainActivity;
 import com.aleat0r.internship.yalantistask1.adapter.RecyclerViewAdapter;
 import com.aleat0r.internship.yalantistask1.data.Invoker;
 import com.aleat0r.internship.yalantistask1.data.Issue;
 import com.aleat0r.internship.yalantistask1.data.State;
-import com.aleat0r.internship.yalantistask1.Utils.Utils;
+import com.aleat0r.internship.yalantistask1.util.Utils;
 import com.melnykov.fab.FloatingActionButton;
 
 import java.util.List;
@@ -23,8 +25,8 @@ import java.util.List;
  */
 public class RecyclerViewFragment extends Fragment {
 
-    private RecyclerView mRecyclerView;
     private RecyclerViewAdapter mAdapter;
+    private FloatingActionButton mFab;
 
     public static Fragment getInstance(State state) {
         Fragment fragment = new RecyclerViewFragment();
@@ -32,6 +34,15 @@ public class RecyclerViewFragment extends Fragment {
         params.putInt(Utils.KEY_STATE, state.getValue());
         fragment.setArguments(params);
         return fragment;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        if (getActivity() instanceof MainActivity) {
+            mFab = ((MainActivity) getActivity()).getFab();
+        }
     }
 
     @Override
@@ -50,16 +61,17 @@ public class RecyclerViewFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_recycler_view, container, false);
-        mRecyclerView = (RecyclerView) v.findViewById(R.id.recycler_view);
+        View view = inflater.inflate(R.layout.fragment_recycler_view, container, false);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.setAdapter(mAdapter);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(mAdapter);
 
-        FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
-        fab.attachToRecyclerView(mRecyclerView);
+        if (mFab != null) {
+            mFab.attachToRecyclerView(recyclerView);
+        }
 
-        return v;
+        return view;
     }
 }

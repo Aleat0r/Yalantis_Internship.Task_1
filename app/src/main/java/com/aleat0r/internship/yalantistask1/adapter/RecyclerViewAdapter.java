@@ -1,6 +1,7 @@
 package com.aleat0r.internship.yalantistask1.adapter;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,10 +11,8 @@ import android.widget.TextView;
 
 import com.aleat0r.internship.yalantistask1.R;
 import com.aleat0r.internship.yalantistask1.data.Issue;
-import com.aleat0r.internship.yalantistask1.Utils.Utils;
+import com.aleat0r.internship.yalantistask1.util.Utils;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -22,18 +21,13 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.IssueViewHolder> {
 
     private Context mContext;
-    private List<Issue> mModel;
+    private List<Issue> mModelsList;
     private OnItemClickListener mOnItemClickListener;
 
-    public RecyclerViewAdapter(Context mContext, List<Issue> model, OnItemClickListener listener) {
-        this.mContext = mContext;
-        initModel(model);
+    public RecyclerViewAdapter(Context context, List<Issue> modelsList, OnItemClickListener listener) {
+        mContext = context;
+        mModelsList = modelsList;
         mOnItemClickListener = listener;
-    }
-
-    private void initModel(Collection<Issue> data) {
-        mModel = new ArrayList<>(data.size());
-        mModel.addAll(data);
     }
 
     @Override
@@ -45,23 +39,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(IssueViewHolder holder, int position) {
 
-        Issue issue = mModel.get(position);
+        Issue issue = mModelsList.get(position);
 
+        holder.mTvCategoryTitle.setText(issue.getCategory());
+        holder.mTvDescription.setText(issue.getFullText());
+        holder.mTvLikesCount.setText(String.valueOf(issue.getLikeAmount()));
+        holder.mIvCategoryIcon.setImageDrawable(ContextCompat.getDrawable(mContext, issue.getIconId()));
 
-        holder.categoryTitle.setText(issue.getCategory());
-        holder.adrress.setText(issue.getFullText());
-        holder.likesCount.setText(String.valueOf(issue.getLikeAmount()));
-        holder.categoryIcon.setImageDrawable(mContext.getResources().getDrawable(issue.getIconId()));
-
-        holder.dateCreated.setText(Utils.getFormatter(mContext).format(issue.getCreated()));
+        holder.mTvDateCreated.setText(Utils.getFormatter(mContext).format(issue.getCreated()));
         String days = mContext.getResources().getString(R.string.days);
-        holder.daysLeft.setText(String.valueOf(issue.getDaysAmount()).concat(" ").concat(days));
-
+        holder.mTvDaysLeft.setText(String.valueOf(issue.getDaysAmount()).concat(" ").concat(days));
     }
 
     @Override
     public int getItemCount() {
-        return mModel.size();
+        return mModelsList.size();
     }
 
     public interface OnItemClickListener {
@@ -70,22 +62,22 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class IssueViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private TextView categoryTitle;
-        private TextView adrress;
-        private TextView daysLeft;
-        private TextView dateCreated;
-        private TextView likesCount;
-        private ImageView categoryIcon;
+        private TextView mTvCategoryTitle;
+        private TextView mTvDescription;
+        private TextView mTvDaysLeft;
+        private TextView mTvDateCreated;
+        private TextView mTvLikesCount;
+        private ImageView mIvCategoryIcon;
 
         public IssueViewHolder(View itemView) {
             super(itemView);
 
-            categoryTitle = (TextView) itemView.findViewById(R.id.type_text_view);
-            categoryIcon = (ImageView) itemView.findViewById(R.id.type_icon_image_view);
-            adrress = (TextView) itemView.findViewById(R.id.address_text_view);
-            daysLeft = (TextView) itemView.findViewById(R.id.days_left_text_view);
-            dateCreated = (TextView) itemView.findViewById(R.id.date_text_view);
-            likesCount = (TextView) itemView.findViewById(R.id.likes_text_view);
+            mTvCategoryTitle = (TextView) itemView.findViewById(R.id.type_text_view);
+            mIvCategoryIcon = (ImageView) itemView.findViewById(R.id.type_icon_image_view);
+            mTvDescription = (TextView) itemView.findViewById(R.id.description_text_view);
+            mTvDaysLeft = (TextView) itemView.findViewById(R.id.days_left_text_view);
+            mTvDateCreated = (TextView) itemView.findViewById(R.id.date_text_view);
+            mTvLikesCount = (TextView) itemView.findViewById(R.id.likes_text_view);
 
             itemView.setOnClickListener(this);
         }
@@ -95,7 +87,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             int position = getAdapterPosition();
 
             if (mOnItemClickListener != null) {
-                mOnItemClickListener.onItemClick(mModel.get(position));
+                mOnItemClickListener.onItemClick(mModelsList.get(position));
             }
         }
     }

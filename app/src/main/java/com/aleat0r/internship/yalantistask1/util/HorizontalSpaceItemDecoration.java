@@ -1,4 +1,4 @@
-package com.aleat0r.internship.yalantistask1.Utils;
+package com.aleat0r.internship.yalantistask1.util;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;

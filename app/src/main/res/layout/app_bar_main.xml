@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
-            app:titleTextColor="@android:color/white"/>
+            app:titleTextColor="@android:color/white" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -25,14 +25,12 @@
 
     <com.melnykov.fab.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="@dimen/fab_size"
-        android:layout_height="@dimen/fab_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_plus"
-        app:backgroundTint="@color/colorFAB"
         fab:fab_colorNormal="@color/colorFAB"
-        fab:fab_shadow="true"
         fab:fab_type="normal" />
 
 </android.support.design.widget.CoordinatorLayout>

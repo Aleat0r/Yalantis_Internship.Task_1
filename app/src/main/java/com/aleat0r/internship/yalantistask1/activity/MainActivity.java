@@ -21,6 +21,7 @@ import com.aleat0r.internship.yalantistask1.adapter.IssuesPagerAdapter;
 import com.aleat0r.internship.yalantistask1.data.State;
 import com.aleat0r.internship.yalantistask1.fragment.ListViewFragment;
 import com.aleat0r.internship.yalantistask1.fragment.RecyclerViewFragment;
+import com.melnykov.fab.FloatingActionButton;
 
 /**
  * Created by Aleksandr Kovalenko on 21.04.2016.
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private List<Fragment> mFragments;
     private List<String> mFragmentNames;
+    private FloatingActionButton mFab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         initDrawer();
         initFragments();
         initViewPager();
+        initFab();
     }
 
     private void initToolbar() {
@@ -82,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initViewPager() {
         final ViewPager issuesPager = (ViewPager) findViewById(R.id.issues_view_pager);
-        final IssuesPagerAdapter adapter = new IssuesPagerAdapter(getSupportFragmentManager(), mFragments);
+        final IssuesPagerAdapter issuesPagerAdapter = new IssuesPagerAdapter(getSupportFragmentManager(), mFragments);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         if (tabLayout != null && issuesPager != null) {
             for (String fragmentName : mFragmentNames) {
@@ -103,11 +106,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            issuesPager.setAdapter(adapter);
+            issuesPager.setAdapter(issuesPagerAdapter);
             issuesPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         }
     }
 
+
+    private void initFab() {
+        mFab = (FloatingActionButton) findViewById(R.id.fab);
+    }
+
+    public FloatingActionButton getFab() {
+        return mFab;
+    }
 
     @Override
     public void onBackPressed() {

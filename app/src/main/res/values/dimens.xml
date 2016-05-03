@@ -22,8 +22,6 @@
     <dimen name="drawer_title_left_padding">16dp</dimen>
     <dimen name="authors_margin">16dp</dimen>
 
-
-    <dimen name="fab_size">56dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="list_recycler_view_padding">8dp</dimen>

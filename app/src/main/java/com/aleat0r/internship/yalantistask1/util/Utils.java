@@ -1,4 +1,4 @@
-package com.aleat0r.internship.yalantistask1.Utils;
+package com.aleat0r.internship.yalantistask1.util;
 
 import android.content.Context;
 
@@ -9,6 +9,7 @@ import com.aleat0r.internship.yalantistask1.data.State;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -20,8 +21,9 @@ import java.util.Random;
 public class Utils {
 
     public static final String KEY_STATE = "key_state";
-    public static final int MAX_RANDOM = 999999999;
-    public static final int MAX_LIKE_RANDOM = 100;
+    private static final int MAX_RANDOM = 999999999;
+    private static final int MAX_LIKE_RANDOM = 100;
+    private static final int DAYS_IN_MONTH = 31;
 
     private static DateFormat sFormatter;
 
@@ -29,7 +31,7 @@ public class Utils {
 
         List<Issue> result = new ArrayList<>(10);
 
-        Random random = new Random((new Date()).getTime());
+        Random random = new Random(System.currentTimeMillis());
 
         for (int i = 1; i <= 10; i++) {
             int randomInt = random.nextInt(MAX_RANDOM);
@@ -52,16 +54,17 @@ public class Utils {
                     break;
             }
 
-            Date dtCreated = new Date();
-            dtCreated.setDate(random.nextInt(31) + 1);
-            dtCreated.setMonth(1);
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.MONTH, Calendar.JANUARY);
+            calendar.set(Calendar.DAY_OF_MONTH, random.nextInt(DAYS_IN_MONTH) + 1);
+            Date dtCreated = calendar.getTime();
 
-            Date dtReg = new Date();
-            dtReg.setDate(random.nextInt(31) + 1);
-            dtReg.setMonth(2);
+            calendar.set(Calendar.MONTH, Calendar.MARCH);
+            calendar.set(Calendar.DAY_OF_MONTH, random.nextInt(DAYS_IN_MONTH) + 1);
+            Date dtReg = calendar.getTime();
 
-            result.add(new Issue(i, number, category, state, dtCreated, dtReg, new Date(),
-                    responsible, iconId, random.nextInt(MAX_LIKE_RANDOM), context.getString(R.string.full_description) + number));
+            result.add(new Issue(i, category, state, dtCreated, dtReg, new Date(), responsible, iconId,
+                    random.nextInt(MAX_LIKE_RANDOM), context.getString(R.string.full_description) + number));
         }
 
         return result;

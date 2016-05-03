@@ -10,7 +10,6 @@ import java.util.Date;
 public class Issue implements Serializable {
 
     private long mId;
-    private String mNumber;
     private String mCategory;
     private State mState;
     private Date mCreated;
@@ -21,10 +20,9 @@ public class Issue implements Serializable {
     private int mIconId;
     private int mLikeAmount;
 
-    public Issue(long id, String number, String category, State state, Date created, Date registered, Date deadline, String responsible,
+    public Issue(long id, String category, State state, Date created, Date registered, Date deadline, String responsible,
                  int iconId, int likeAmount, String fullText) {
         this.mId = id;
-        this.mNumber = number;
         this.mCategory = category;
         this.mState = state;
         this.mCreated = created;
@@ -33,7 +31,6 @@ public class Issue implements Serializable {
         this.mResponsible = responsible;
         this.mIconId = iconId;
         this.mLikeAmount = likeAmount;
-
         this.mFullText = fullText;
     }
 
@@ -43,14 +40,6 @@ public class Issue implements Serializable {
 
     public void setID(long id) {
         this.mId = id;
-    }
-
-    public String getNumber() {
-        return mNumber;
-    }
-
-    public void setNumber(String number) {
-        this.mNumber = number;
     }
 
     public String getFullText() {
